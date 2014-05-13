@@ -4,11 +4,10 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-
+var Db = require("mongodb").Db;
+var Server = require('mongodb').Server;
 var app = express();
 
 // all environments
@@ -29,8 +28,12 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+var db = new Db("mongodbexp", new Server("localhost", "27017"));
+
+require("./routes/create")(app, db);
+// require("./routes/get");
+// require("./routes/delete");
+// require("./routes/edit");
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
