@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>Couchbase testing</h1>
+        <p><a href="/create1">Add 1 document</a></p>
+        <p><a href="/create5000">Add 5000 documents</a></p>
+        <p><a href="/create50000">Add 50 000 documents</a></p>
+        <p><a href="/create100000">Add 100 000 documents</a></p>
+        <p><a href="/create200000">Add 200 000 documents</a></p>
+        <p><a href="/remove1">Remove 1 document</a></p>
+        <p><a href="/remove5000">Remove 5000 documents</a></p>
+        <p><a href="/remove50000">Remove 50 000 documents</a></p>
+        <p><a href="/remove100000">Remove 100 000 documents</a></p>
+        <p><a href="/remove200000">Remove 200 000 documents</a></p>
+        <p><a href="/update1">Update 1 document</a></p>
+        <p><a href="/update5000">Update 5000 documents</a></p>
+        <p><a href="/update50 000">Update 50 000 documents</a></p>
+        <p><a href="/update100000">Update 100 000 documents</a></p>
+        <p><a href="/update200000">Update 200 000 documents</a></p>
+        <p><a href="/find1">Find 1 document</a></p>
+        <p><a href="/find5000">Find 5000 documents</a></p>
+        <p><a href="/find50000">Find 50 000 documents</a></p>
+        <p><a href="/find100000">Find 100 000 documents</a></p>
+        <p><a href="/find200000">Find 200 000 documents</a></p>
+    </body>
+</html>
