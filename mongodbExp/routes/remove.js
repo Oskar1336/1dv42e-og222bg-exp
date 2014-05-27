@@ -57,7 +57,7 @@ module.exports = function(app, db) {
                     console.log("Start time: " + startTime);
                     console.log("End time: " + endTime);
                     res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
-                }, 10000);
+                }, 2000);
             }
         });
     });

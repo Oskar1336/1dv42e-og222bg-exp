@@ -36,8 +36,6 @@ module.exports = function(app, couchbase) {
                 db.get(i, function(err, result) {
                     if (err) {
                         console.log(err);
-                        res.status(500);
-                        res.send("Error check log");
                     } else {
                         endTime = now();
                     }
@@ -47,7 +45,7 @@ module.exports = function(app, couchbase) {
                 console.log("Start time: " + startTime);
                 console.log("End time: " + endTime);
                 res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
-            }, 10000);
+            }, 5000);
         });
     });
 
@@ -62,18 +60,16 @@ module.exports = function(app, couchbase) {
                 db.get(i, function(err, result) {
                     if (err) {
                         console.log(err);
-                        res.status(500);
-                        res.send("Error check log");
                     } else {
-                        if (i === 49999) {
-                            endTime = now();
-                            console.log("Start time: " + startTime);
-                            console.log("End time: " + endTime);
-                            res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
-                        }
+                        endTime = now();
                     }
                 });
             }
+            setTimeout(function() {
+                console.log("Start time: " + startTime);
+                console.log("End time: " + endTime);
+                res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
+            }, 5000);
         });
     });
 
@@ -85,47 +81,19 @@ module.exports = function(app, couchbase) {
             var endTime = 0;
             var startTime = now();
             for (var i = 0; i < 100000; i++) {
-                db.get("one", function(err, result) {
+                db.get(i, function(err, result) {
                     if (err) {
                         console.log(err);
-                        res.status(500);
-                        res.send("Error check log");
                     } else {
-                        if (i === 99999) {
-                            endTime = now();
-                            console.log("Start time: " + startTime);
-                            console.log("End time: " + endTime);
-                            res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
-                        }
+                        endTime = now();
                     }
                 });
             }
-        });
-    });
-
-    app.get("/find200000", function(req, res) {
-        var db = new couchbase.Connection({
-            bucket: "default",
-            host: "127.0.0.1"
-        }, function(err) {
-            var endTime = 0;
-            var startTime = now();
-            for (var i = 0; i < 200000; i++) {
-                db.get("one", function(err, result) {
-                    if (err) {
-                        console.log(err);
-                        res.status(500);
-                        res.send("Error check log");
-                    } else {
-                        if (i === 199999) {
-                            endTime = now();
-                            console.log("Start time: " + startTime);
-                            console.log("End time: " + endTime);
-                            res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
-                        }
-                    }
-                });
-            }
+            setTimeout(function() {
+                console.log("Start time: " + startTime);
+                console.log("End time: " + endTime);
+                res.render("testresult", {startTime: startTime, endTime: endTime, totalTime: endTime - startTime});
+            }, 10000);
         });
     });
 };
