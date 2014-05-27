@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>MongoDB testing</h1>
+        <p><a href="/createDatabase">Create database</a></p>
+        <p><a href="/create1">Add 1 document</a></p>
+        <p><a href="/create5000">Add 5000 documents</a></p>
+        <p><a href="/create50000">Add 50 000 documents</a></p>
+        <p><a href="/create100000">Add 100 000 documents</a></p>
+        <p><a href="/create200000">Add 200 000 documents</a></p>
+        <p><a href="/remove1">Remove 1 document</a></p>
+        <p><a href="/remove">Remove current documents</a></p>
+        <p><a href="/update1">Update 1 document</a></p>
+        <p><a href="/update">Update current documents</a></p>
+        <p><a href="/find1">Find 1 document</a></p>
+        <p><a href="find">Find current documents</a></p>
+    </body>
+</html>

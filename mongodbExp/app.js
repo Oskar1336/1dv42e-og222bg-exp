@@ -14,7 +14,6 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
-app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -28,12 +27,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-var db = new Db("mongodbexp", new Server("localhost", "27017"));
+require("./routes")(app);
 
+var db = new Db("mongodbexp", new Server("localhost", "27017"));
 require("./routes/create")(app, db);
-// require("./routes/get");
-// require("./routes/delete");
-// require("./routes/edit");
+require("./routes/find")(app, db);
+require("./routes/remove")(app, db);
+require("./routes/update")(app, db);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

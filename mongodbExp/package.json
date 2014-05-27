@@ -9,6 +9,7 @@
         "express": "3.5.1",
         "hjs": "*",
         "stylus": "*",
-        "mongodb": "1.4.4"
+        "mongodb": "1.4.4",
+        "performance-now": "0.1.3"
     }
 }

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test result</title>
+    </head>
+    <body>
+        <h1>Test result MongoDB</h1>
+        <p>Test started: {{ startTime }}</p>
+        <p>Test ended: {{ endTime }}</p>
+        <p>Total test time in milliseconds: {{ totalTime }}</p>
+    </body>
+</html>
